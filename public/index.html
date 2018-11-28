@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tiny Improvements</title>
+    <title>Kudos</title>
 
-    <!-- Css link-->
+    <!-- boot Css link-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -22,92 +22,94 @@
     <!--jQuery link-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a id="brand" class="navbar-brand" href="#">Send compliments or "Kudos" to other users</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li id="SeeAllKudosButton" class="nav-item active">
-                    <a class="nav-link" href="#">See Kudos <span class="sr-only">(current)</span></a>
-                </li>
-                <li id="PostANewKudoButton" class="nav-item hide">
-                    <a data-toggle="modal" data-target="#newKudoModal" class="nav-link" href="#">Post Kudo</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
     <div class="container">
         <div class="jumbotron header">
-            <h1 class="display-4">Tiny Improvements</h1>
+            <h1 class="display-4">Tiny Improvements </h1><small>
+                <h5>show some love</h5>
+            </small>
         </div>
     </div>
 
-    <div class="container" id="target">
+    <!--add kudo button and view kudo button-->
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <button style="width: 100%;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Add Kudos
+            </button>
+            <!--TODO: Add a view option for the user to view their own kudos -->
+        </div>
 
     </div>
-    <div class="container">
-        <div class="modal fade" id="newKudoModal" tabindex="-1" role="dialog" aria-labelledby="newKudoModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="newKudoModalLabel">New Kudo</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">To:</label>
-                                <select class="form-control" id="recipient-name">
-                                    <option>Josh</option>
-                                    <option>Jessica</option>
-                                    <option>Scott</option>
-                                    <option>Ann</option>
-                                    <option>Wayne</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message-title" class="col-form-label">Title:</label>
-                                <input type="text" class="form-control" id="message-title" />
-                                <label for="message-body" class="col-form-label">Message:</label>
-                                <textarea class="form-control" id="message-body"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">From:</label>
-                                <select class="form-control" id="recipient-name">
-                                    <option>Josh</option>
-                                    <option>Jessica</option>
-                                    <option>Scott</option>
-                                    <option>Ann</option>
-                                    <option>Wayne</option>
-                                </select>
 
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Share some love with co-workers!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">x</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <select class="custom-select" id="sendKudo">
+                                <option selected>To:</option>
+                                <option value="Ben">Ben</option>
+                                <option value="Bob">Bob</option>
+                                <option value="Pat">Pat</option>
+                                <option value="Billy">Billy</option>
+                                <option value="Patric">Patric</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input class="form-control" id="titleHere" placeholder="Title Here">
+                                <textarea class="form-control" id="bodyInput" placeholder="Message Here" rows="3"></textarea>
                             </div>
-                        </form>
-
+                        </div>
+                        <div class="col-md-4">
+                            <select class="custom-select" id="getKudo">
+                                <option selected>From:</option>
+                                <option value="Sabrina">Sabrina</option>
+                                <option value="Ben">Ben</option>
+                                <option value="Pat">Pat</option>
+                                <option value="Bob">Bob</option>
+                                <option value="Patrick">Patrick</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button id="send-kudo" data-dismiss="modal" type="button" class="btn btn-primary">Send Kudo</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="kudos-btn" type="button" class="btn btn-primary" data-dismiss="modal">Send Kudos!</button>
                 </div>
             </div>
         </div>
     </div>
-<!--js link-->
-<script src="js/app.js"></script>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <!--Kudos get dummped here-->
+            <div id="kudos">
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 </body>
+
+<script src="js/app.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+    </script>
+
 
 </html>
